@@ -11,3 +11,4 @@ end
 gem 'jquery-rails'
 gem 'capistrano'
 gem 'rvm-capistrano'
+gem 'therubyracer'
