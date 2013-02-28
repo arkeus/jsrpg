@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html class="no-js" ng-app="ashen">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Ashen</title>
+        <meta name="description" content="AngularJS Powered Javascript RPG">
+        <meta name="viewport" content="width=device-width">
+        <%= stylesheet_link_tag "ashen/manifest", :media => "all" %>
+        <%= javascript_include_tag "ashen/manifest" %>
+    </head>
+    <body>
+        <div ng-controller="PlayerController">
+            Name: {{player.name}}<br>
+            Level: {{player.experience.level}} ({{player.experience.xp}} / {{player.experience.xpm}})<br>
+            Strength: {{player.stats.strength}}<br>
+            Defense: {{player.stats.defense}}<br>
+            Agility: {{player.stats.agility}}<br>
+            Intellect: {{player.stats.intellect}}<br>
+            Wisdom: {{player.stats.wisdom}}<br><br>
+        </div>
+        
+        <div ng-controller="GameController">
+            <div class="experience-button" ng-click="gainExperience(100)">CLICK TO GAIN EXPERIENCE</div>
+        </div>
+        
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

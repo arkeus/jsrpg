@@ -1,0 +1,23 @@
+== JSRPG
+
+Link Soon
+
+=== What?
+
+A set of client-side javascript based rpgs.
+
+=== Why?
+
+To learn AngularJS (and perhaps other javascript frameworks). Will be making multiple rpgs, possibly with different frameworks.
+
+=== Who?
+
+Arkeus
+@arkeus
+http://iarke.us
+
+== Projects Contained
+
+=== Ashen
+
+Semi-Idle RPG written using AngularJS. 
