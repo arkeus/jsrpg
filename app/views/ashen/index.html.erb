@@ -10,6 +10,28 @@
         <%= javascript_include_tag "ashen/manifest" %>
     </head>
     <body>
+        <div id="container">
+            <div id="stats" ng-controller="PlayerController">
+                Name: {{player.name}}<br>
+                Level: {{player.experience.level}} ({{player.experience.xp}} / {{player.experience.xpm}})<br>
+                Strength: {{player.stats.strength}}<br>
+                Defense: {{player.stats.defense}}<br>
+                Agility: {{player.stats.agility}}<br>
+                Intellect: {{player.stats.intellect}}<br>
+                Wisdom: {{player.stats.wisdom}}
+            </div>
+            <div id="player">
+            </div>
+            <div id="enemy"></div>
+            <div id="combat" ng-controller="GameController">
+                <div class="experience-button" ng-click="gainExperience(100)">CLICK TO GAIN EXPERIENCE</div>
+            </div>
+            <div id="tabs"></div>
+            <div id="skills"></div>
+            <div id="pet"></div>
+        </div>
+        
+        <!--
         <div ng-controller="PlayerController">
             Name: {{player.name}}<br>
             Level: {{player.experience.level}} ({{player.experience.xp}} / {{player.experience.xpm}})<br>
@@ -23,6 +45,7 @@
         <div ng-controller="GameController">
             <div class="experience-button" ng-click="gainExperience(100)">CLICK TO GAIN EXPERIENCE</div>
         </div>
+        -->
         
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
         <script src="js/plugins.js"></script>

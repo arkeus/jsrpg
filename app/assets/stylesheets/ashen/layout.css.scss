@@ -1,0 +1,65 @@
+/**
+ *  Definition for the main game layout.
+ */
+
+@import "utility";
+
+$width: 800px;
+$height: 500px;
+
+body {
+  @include unselectable;
+}
+
+// Align a layout cell
+@mixin cell($width, $height, $left, $top) {
+  position: absolute;
+  width: $width;
+  height: $height;
+  left: $left;
+  top: $top;
+}
+
+#container {
+  width: $width;
+  height: $height;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  margin: 0 0 0 ($width / -2);
+  
+  #stats {
+    @include cell(25%, 60%, 0, 0);
+    background: rgba(255, 150, 190, 0.5);
+  }
+  
+  #player {
+    @include cell(25%, 30%, 25%, 0);
+    background: rgba(205, 250, 155, 0.5);
+  }
+  
+  #enemy {
+    @include cell(25%, 30%, 50%, 0);
+    background: rgba(205, 120, 233, 0.5);
+  }
+  
+  #tabs {
+    @include cell(25%, 60%, 75%, 0);
+    background: rgba(255, 190, 140, 0.5);
+  }
+  
+  #combat {
+    @include cell(50%, 30%, 25%, 30%);
+    background: rgba(100, 190, 255, 0.5);
+  }
+  
+  #skills {
+    @include cell(50%, 40%, 0%, 60%);
+    background: rgba(140, 100, 250, 0.5);
+  }
+  
+  #pet {
+    @include cell(50%, 40%, 50%, 60%);
+    background: rgba(100, 255, 150, 0.5);
+  }
+}
