@@ -84,3 +84,28 @@ body {
     }
   }
 }
+
+#log {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+#stats {
+  .stat {
+    margin-bottom: 4px;
+    
+    .name {
+      font-size: $font-size-small;
+      color: $font-color-light;
+      width: 70px;
+      display: inline-block;
+    }
+    
+    .value {
+      font-size: $font-size;
+      color: $font-color-dark;
+    }
+  }
+}
