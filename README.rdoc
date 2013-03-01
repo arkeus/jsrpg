@@ -1,6 +1,6 @@
 == JSRPG
 
-Link Soon
+Ashen: http://jsrpg.io/ashen
 
 === What?
 
