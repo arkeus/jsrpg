@@ -1,0 +1,86 @@
+@import "utility";
+@import "constants";
+
+body {
+  .halo {
+    border: 4px solid #f0f0f0;
+    border-radius: 3px;
+  }
+}
+
+#player, #pet, #enemy {
+  .level {
+    float: right;
+    color: $font-color-light;
+    font-size: $font-size-small;
+    
+    em {
+      color: $font-color-dark;
+      font-size: $font-size;
+      font-style: normal;
+      padding-left: 2px;
+    }
+  }
+  
+  .name {
+    font-weight: bold;
+  }
+  
+  .title-row {
+    font-size: $font-size-small;
+    color: $font-color-light;
+    
+    .affixes {
+      float: right;
+    }
+  }
+  
+  .bar-container {
+    display: block;
+    $label-width: 16px;
+    margin-top: 2px;
+    
+    &.xp {
+      width: 80px;
+      float: right;
+    }
+    
+    &.mp, &.ap {
+      margin-top: 5px;
+    }
+    
+    &>.title {
+      color: #fff;
+      float: left;
+      font-size: $font-size-small - 1;
+      line-height: $font-size-small - 1;
+      position: relative;
+      top: -1px;
+      width: $label-width;
+      font-weight: bold;
+      
+      &.hp { color: $color-hp; }
+      &.mp { color: $color-mp; }
+      &.xp { color: $color-xp; }
+      &.ap { color: $color-ap; }
+    }
+    
+    .bar {
+      background: $bg-color-light;
+      height: 8px;
+      border-radius: 5px;
+      margin-left: $label-width;
+      
+      .fill {
+        background: #000;
+        height: 8px;
+        border-radius: 5px;
+        
+        &.hp { background: $color-hp; }
+        &.mp { background: $color-mp; }
+        &.xp { background: $color-xp; }
+        &.ap { background: $color-ap; }
+      }
+    }
+  }
+}
