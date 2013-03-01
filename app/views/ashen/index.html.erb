@@ -18,10 +18,7 @@
                     <span class="name">{{player.name}}</span>
                 </div>
                 <div class="title-row">
-                    <div class="bar-container xp clear">
-                        <div class="title xp">XP</div>
-                        <div class="bar"><div class="fill xp" style="width:{{player.experience.xp / player.experience.xpm * 100}}%"></div></div>
-                    </div>
+                    <bar type="xp" current="player.experience.xp" max="player.experience.xpm"></bar>
                     <span class="title">The Beginner</span>
                 </div>
                 <bar type="hp" current="player.stats.hp" max="player.stats.hpm"></bar>
@@ -34,10 +31,7 @@
                     <span class="name">Ghost</span>
                 </div>
                 <div class="title-row">
-                    <div class="bar-container xp clear">
-                        <div class="title xp">XP</div>
-                        <div class="bar"><div class="fill xp"></div></div>
-                    </div>
+                    <bar type="xp" current="1" max="1"></bar>
                     <span class="title">Direwolf</span>
                 </div>
                 <bar type="hp" current="player.stats.hp" max="player.stats.hpm"></bar>
