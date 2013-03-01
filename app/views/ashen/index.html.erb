@@ -10,25 +10,63 @@
         <%= javascript_include_tag "ashen/manifest" %>
     </head>
     <body>
-        <div id="container">
+        <div id="container" ng-cloak class="ng-cloak">
+            <!-- Player Battle Frame Cell -->
+            <div id="player" ng-controller="PlayerController">
+                <div class="name-row">
+                    <span class="level">LV<em>{{player.experience.level}}</em></span>
+                    <span class="name">{{player.name}}</span>
+                </div>
+                <div class="title-row">
+                    <div class="bar-container xp clear">
+                        <div class="title xp">XP</div>
+                        <div class="bar"><div class="fill xp" style="width:{{player.experience.xp / player.experience.xpm * 100}}%"></div></div>
+                    </div>
+                    <span class="title">The Beginner</span>
+                </div>
+                <bar type="hp" current="player.stats.hp" max="player.stats.hpm"></bar>
+                <bar type="mp" current="player.stats.mp" max="player.stats.mpm"></bar>
+            </div>
+            <!-- Pet Battle Frame Cell -->
+            <div id="pet" ng-controller="PlayerController">
+                <div class="name-row">
+                    <span class="level">LV<em>15</em></span>
+                    <span class="name">Ghost</span>
+                </div>
+                <div class="title-row">
+                    <div class="bar-container xp clear">
+                        <div class="title xp">XP</div>
+                        <div class="bar"><div class="fill xp"></div></div>
+                    </div>
+                    <span class="title">Direwolf</span>
+                </div>
+                <bar type="hp" current="player.stats.hp" max="player.stats.hpm"></bar>
+                <bar type="ap" current="player.stats.mp" max="player.stats.mpm"></bar>
+            </div>
+            <!-- Enemy Battle Frame Cell -->
+            <div id="enemy" ng-controller="PlayerController">
+                <div class="name-row">
+                    <span class="level">LV<em>9</em></span>
+                    <span class="name">Goblin</span>
+                </div>
+                <div class="title-row">
+                    <span class="affixes">Molten, Fast</span>
+                    <span class="title">Elite</span>
+                </div>
+                <bar type="hp" current="player.stats.hp" max="player.stats.hpm"></bar>
+            </div>
+            <!-- Stats Window -->
             <div id="stats" ng-controller="PlayerController">
-                Name: {{player.name}}<br>
-                Level: {{player.experience.level}} ({{player.experience.xp}} / {{player.experience.xpm}})<br>
-                Strength: {{player.stats.strength}}<br>
-                Defense: {{player.stats.defense}}<br>
-                Agility: {{player.stats.agility}}<br>
-                Intellect: {{player.stats.intellect}}<br>
-                Wisdom: {{player.stats.wisdom}}
+                <div class="stat">
+                    <span class="name">STRENGTH</span>
+                    <span class="value">{{player.stats.strength}}</span>
+                </div>
             </div>
-            <div id="player">
-            </div>
-            <div id="enemy"></div>
             <div id="combat" ng-controller="GameController">
                 <div class="experience-button" ng-click="gainExperience(100)">CLICK TO GAIN EXPERIENCE</div>
             </div>
+            <div id="inventory"></div>
             <div id="tabs"></div>
-            <div id="skills"></div>
-            <div id="pet"></div>
         </div>
         
         <!--

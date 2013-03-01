@@ -9,6 +9,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'therubyracer'
+gem 'capistrano', :platforms => :ruby
+gem 'rvm-capistrano', :platforms => :ruby
+gem 'therubyracer', :platforms => :ruby
