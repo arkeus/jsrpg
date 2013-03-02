@@ -48,6 +48,7 @@ app.directive("bar", function() {
     return {
         restrict: "E",
         link: function(scope, element, attrs) {
+            // Probably a better way to fuck with the DOM, with a template or some shit
             $(element).addClass("bar-container clear").addClass(attrs.type).append(
                 $("<div></div>").addClass("title").addClass(attrs.type).text(attrs.type.toUpperCase())
             ).append(
@@ -59,7 +60,7 @@ app.directive("bar", function() {
             scope.$watch(attrs.current, function() {
                 var current = scope.$eval(attrs.current);
                 var max = scope.$eval(attrs.max);
-                $(element).find(".fill").css("width", (current / max * 100) + "%");
+                $(element).find(".fill").stop(true, false).animate({ "width": (current / max * 100) + "%" }, GAME_TICK * 0.75);
             });
         }
     }

@@ -1,0 +1,19 @@
+$icon-size: 13px;
+
+@mixin icon($x, $y) {
+  background-position: (-1 * $x * $icon-size) (-1 * $y * $icon-size);
+}
+
+.icon {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 -2px -1px 0;
+  padding: 0;
+  background-image: image-url("ashen/icons.png");
+  background-position: -52px 0px;
+  
+  &.fire { @include icon(6, 0); }
+  &.earth { @include icon(5, 0); }
+  &.water { @include icon(4, 0); }
+}
