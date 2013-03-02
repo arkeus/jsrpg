@@ -21,7 +21,7 @@
             <div id="player" ng-controller="PlayerController">
                 <div class="name-row">
                     <span class="level">LV<em>{{player.experience.level}}</em></span>
-                    <span class="name">{{player.name}}</span>
+                    <span class="name">{{player.name}} ({{player.gold}})</span>
                 </div>
                 <div class="title-row">
                     <bar type="xp" current="player.experience.xp" max="player.experience.xpm"></bar>
@@ -70,14 +70,16 @@
             <div id="combat" ng-controller="GameController">
                 <log id="log">
                     <div ng-repeat="message in log.messages">
-                        <div ng-switch="message">
+                        <div class="message" ng-switch="message">
                             <div ng-switch-when="-" class="separator"></div>
                             <div ng-switch-default ng-bind-html-unsafe="message"></div>
                         </div>
                     </div>
                 </log>
             </div>
-            <div id="inventory"></div>
+            <div id="inventory" ng-controller="InventoryController">
+                GOLD {{player.gold}}
+            </div>
             <div id="tabs"></div>
         </div>
         

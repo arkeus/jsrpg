@@ -81,6 +81,15 @@ body {
         &.xp { background: $color-xp; }
         &.ap { background: $color-ap; }
       }
+      
+      transition: box-shadow 300ms ease-out;
+      
+      &:hover {
+        &.hp { box-shadow: 0 0 5px #600000; }
+        &.mp { box-shadow: 0 0 5px #003460; }
+        &.xp { box-shadow: 0 0 5px #2d6000; }
+        &.ap { box-shadow: 0 0 5px #605600; }
+      }
     }
   }
 }
@@ -97,6 +106,16 @@ body {
   
   .separator {
     height: 0px;
+  }
+  
+  .message {
+    transition: all 300ms ease-out;
+    cursor: default;
+    
+    &:hover {
+      box-shadow: 0 0 5px #aaa;
+      text-shadow: 0 0 5px #aaa;
+    }
   }
 }
 

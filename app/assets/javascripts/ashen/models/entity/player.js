@@ -1,6 +1,8 @@
 var Player = function($rootScope) {
     angular.extend(this, new Entity($rootScope));
     
+    this.gold = 0;
+    
     this.levelUp = function() {
         this.stats.strength += Math.floor(Math.random() * 3);
         this.stats.defense += Math.floor(Math.random() * 3);
@@ -16,5 +18,10 @@ var Player = function($rootScope) {
             this.levelUp();
             $rootScope.Registry.log.add("You've reached level " + $rootScope.color(this.experience.level) + "!");
         }
+    };
+    
+    this.gainGold = function(amount) {
+        this.gold += amount;
+        $rootScope.Registry.log.add("You found " + $rootScope.color(amount, "gold") + " gold.");
     };
 }

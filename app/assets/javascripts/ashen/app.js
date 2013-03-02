@@ -7,11 +7,11 @@ app.run(["$rootScope", function($rootScope) {
     };
 }]);
 
-app.factory("Registry", ["$rootScope", function($rootScope) {
+app.factory("Registry", ["$rootScope", "$timeout", function($rootScope, $timeout) {
     $rootScope.Registry = {
         player : new Player($rootScope),
         world : new World($rootScope),
-        log : new Log($rootScope)
+        log : new Log($rootScope, $timeout)
     };
         
     return $rootScope.Registry;

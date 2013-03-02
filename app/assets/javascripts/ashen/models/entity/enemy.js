@@ -6,5 +6,6 @@ var Enemy = function($rootScope) {
     this.die = function() {
         $rootScope.Registry.log.add("You defeated the " + this.getColoredName());
         $rootScope.Registry.player.gainExperience(this.experience.level);
+        $rootScope.Registry.player.gainGold(Math.ceil(Math.random() * 10));
     };
 };
