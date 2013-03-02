@@ -8,6 +8,12 @@
         <meta name="viewport" content="width=device-width">
         <%= stylesheet_link_tag "ashen/manifest", :media => "all" %>
         <%= javascript_include_tag "ashen/manifest" %>
+        <!--[if lte IE 8]>
+        <script>
+            document.createElement('bar');
+            document.createElement('log');
+        </script>
+        <![endif]-->
     </head>
     <body>
         <div id="container" ng-cloak class="ng-cloak">
@@ -59,7 +65,12 @@
             </div>
             <div id="combat" ng-controller="GameController">
                 <log id="log">
-                    <div ng-repeat="message in log.messages">{{message}}</div>
+                    <div ng-repeat="message in log.messages">
+                        <div ng-switch="message">
+                            <div ng-switch-when="-" class="separator"></div>
+                            <div ng-switch-default>{{message}}</div>
+                        </div>
+                    </div>
                 </log>
             </div>
             <div id="inventory"></div>

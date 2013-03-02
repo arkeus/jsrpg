@@ -89,7 +89,15 @@ body {
   display: block;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
+  
+  &:hover {
+    overflow: auto;
+  }
+  
+  .separator {
+    height: 4px;
+  }
 }
 
 #stats {

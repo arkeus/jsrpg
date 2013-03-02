@@ -2,6 +2,7 @@ var GameController = function($scope, $timeout, Registry) {
     $scope.log = Registry.log;
     
     function update() {
+        Registry.log.tick();
         var experience = Math.floor(Math.random() * 20) + 10;
         Registry.log.add("You gained " + experience + " experience.");
         
@@ -13,7 +14,7 @@ var GameController = function($scope, $timeout, Registry) {
     
     function scheduleUpdate() {
         update();
-        $timeout(function() { scheduleUpdate(); }, 500);
+        $timeout(function() { scheduleUpdate(); }, GAME_TICK);
     }
     
     scheduleUpdate();
