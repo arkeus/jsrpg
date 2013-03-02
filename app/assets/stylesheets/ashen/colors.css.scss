@@ -1,0 +1,14 @@
+// Elements for damage, enemies, pets
+.element {
+  &.fire { color: #e31b1b; }
+  &.earth { color: #1be329; }
+  &.water { color: #1b82e3; }
+}
+
+.experience {
+  color: #9ee318;
+}
+
+.gold {
+  color: #e3a318;
+}

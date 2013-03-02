@@ -67,10 +67,16 @@ body {
   }
 }
 
+// General tags
+
 html, body {
   color: $font-color;
   font-size: $font-size;
   font-family: Helvetica, Arial, sans-serif;
+}
+
+em {
+  font-style: normal;
 }
 
 // Magic Scrollbars

@@ -1,10 +1,20 @@
 var app = angular.module("ashen", []);
 
+app.run(["$rootScope", function($rootScope) {
+    $rootScope.color = function(value, type, subtype) {
+        var colorClass = angular.lowercase(type + (typeof subtype === "undefined" ? "" : " " + subtype));
+        return "<em class=\"" + colorClass + "\">" + value + "</em>";
+    };
+}]);
+
 app.factory("Registry", ["$rootScope", function($rootScope) {
-    return {
-        player : new Player(),
+    $rootScope.Registry = {
+        player : new Player($rootScope),
+        world : new World($rootScope),
         log : new Log($rootScope)
-    }
+    };
+        
+    return $rootScope.Registry;
 }]);
 
 app.directive("log", ["$timeout", function($timeout) {
@@ -28,7 +38,7 @@ app.directive("log", ["$timeout", function($timeout) {
             });
             
             $(window).focus(function() {
-                $(element).scrollTop($(element)[0].scrollHeight - $(element).outerHeight());
+                $(element).stop(true, false).scrollTop($(element)[0].scrollHeight - $(element).outerHeight());
             });
         }
     }

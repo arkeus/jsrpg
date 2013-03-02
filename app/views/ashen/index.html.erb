@@ -44,31 +44,35 @@
                 <bar type="ap" current="player.stats.mp" max="player.stats.mpm"></bar>
             </div>
             <!-- Enemy Battle Frame Cell -->
-            <div id="enemy" ng-controller="PlayerController">
-                <div class="name-row">
-                    <span class="level">LV<em>9</em></span>
-                    <span class="name">Goblin</span>
+            <div id="enemy" ng-controller="EnemyController">
+                <div ng-show="enemy">
+                    <div class="name-row">
+                        <span class="level">LV<em>{{enemy.experience.level}}</em></span>
+                        <span class="name">{{enemy.name}}</span>
+                    </div>
+                    <div class="title-row">
+                        <span class="affixes">Molten, Fast</span>
+                        <span class="title">Elite</span>
+                    </div>
+                    <bar type="hp" current="enemy.stats.hp" max="enemy.stats.hpm"></bar>
                 </div>
-                <div class="title-row">
-                    <span class="affixes">Molten, Fast</span>
-                    <span class="title">Elite</span>
-                </div>
-                <bar type="hp" current="player.stats.hp" max="player.stats.hpm"></bar>
             </div>
             <!-- Stats Window -->
             <div id="stats" ng-controller="PlayerController">
                 <div class="stat"><span class="name">STRENGTH</span><span class="value">{{player.stats.strength}}</span></div>
                 <div class="stat"><span class="name">DEFENSE</span><span class="value">{{player.stats.defense}}</span></div>
+                <div class="stat"><span class="name">VITALITY</span><span class="value">{{player.stats.vitality}}</span></div>
                 <div class="stat"><span class="name">AGILITY</span><span class="value">{{player.stats.agility}}</span></div>
                 <div class="stat"><span class="name">INTELLECT</span><span class="value">{{player.stats.intellect}}</span></div>
                 <div class="stat"><span class="name">WISDOM</span><span class="value">{{player.stats.wisdom}}</span></div>
+                <div class="stat"><span class="name">SPIRIT</span><span class="value">{{player.stats.spirit}}</span></div>
             </div>
             <div id="combat" ng-controller="GameController">
                 <log id="log">
                     <div ng-repeat="message in log.messages">
                         <div ng-switch="message">
                             <div ng-switch-when="-" class="separator"></div>
-                            <div ng-switch-default>{{message}}</div>
+                            <div ng-switch-default ng-bind-html-unsafe="message"></div>
                         </div>
                     </div>
                 </log>
