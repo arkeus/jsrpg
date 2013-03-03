@@ -1,0 +1,6 @@
+Assets:
+  (c) Lee Miller
+  http://iarke.us
+  @arkeus
+  
+While code in this project is released under an open license (see license.txt at root), the assets are not. Assets are only to be used for learning purposes. If you release something made using this code, you must provide your own images.

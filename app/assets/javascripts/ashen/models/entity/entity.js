@@ -4,6 +4,10 @@ var Entity = function($rootScope) {
     this.experience = new Experience();
     this.stats = new Statistics();
     
+    this.stat = function(type) {
+        return this.stats[type];
+    };
+    
     this.loadFromLevel = function(level) {
         this.stats.loadFromLevel(level);
     };

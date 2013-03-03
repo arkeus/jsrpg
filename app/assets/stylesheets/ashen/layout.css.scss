@@ -20,50 +20,77 @@ body {
   padding: 10px;
 }
 
+#title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin: 0 0 0 ($width / -2 + 20);
+  font-size: 32px;
+  font-weight: bold;
+  color: #f2f2f2;
+  font-variant: small-caps;
+}
+
 #container {
-  width: $width;
+  @include box-size;
+  width: $width ;
   height: $height;
   position: absolute;
-  top: 5%;
+  top: 40px;
   left: 50%;
   margin: 0 0 0 ($width / -2);
+  background: -webkit-linear-gradient(top, #f2f2f2, #ffefef);
+  border-radius: 5px;
+  padding: 5px;
+  
+  > div {
+    @include box-size;
+    border: 1px solid #d5d5d5;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #fcfcfc;
+    border-radius: 3px;
+  }
   
   // Align cells absolutely to make it easier to swap around and play
   // with different layout types.
   
+  // 800 x 500
+  
   #player {
-    @include cell(25%, 16%, 0, 0);
-    background: rgba(205, 250, 155, 0.05);
+    @include cell(200px, 72px, 0, 0);
+    background: rgba(205, 250, 155, 0.01);
   }
   
   #pet {
-    @include cell(25%, 16%, 25%, 0);
-    background: rgba(205, 150, 255, 0.05);
+    @include cell(200px, 72px, 25%, 0);
+    background: rgba(205, 150, 255, 0.01);
   }
   
   #enemy {
-    @include cell(50%, 14%, 0, 16%);
-    background: rgba(205, 120, 233, 0.05);
+    @include cell(400px, 59px, 0, 72px);
+    background: rgba(205, 120, 233, 0.01);
   }
   
   #stats {
-    @include cell(50%, 30%, 0, 30%);
-    background: rgba(255, 150, 190, 0.05);
+    @include cell(400px, 128px, 0, 131px);
+    background: rgba(255, 150, 190, 0.01);
   }
   
   #combat {
-    @include cell(50%, 60%, 50%, 0);
-    background: rgba(100, 190, 255, 0.05);
+    @include cell(400px, 259px, 400px, 0);
+    background: rgba(100, 190, 255, 0.01);
   }
   
   #inventory {
-    @include cell(50%, 40%, 0, 60%);
-    background: rgba(140, 100, 250, 0.05);
+    @include cell(400px, 241px, 0, 259px);
+    background: rgba(140, 100, 250, 0.01);
   }
   
   #tabs {
-    @include cell(50%, 40%, 50%, 60%);
-    background: rgba(255, 190, 140, 0.05);
+    @include cell(400px, 241px, 400px, 259px);
+    background: rgba(255, 190, 140, 0.01);
   }
 }
 
@@ -88,6 +115,7 @@ em {
 
 ::-webkit-scrollbar {
     width: 11px;
+    background: #fff;
 }
 
 ::-webkit-scrollbar-track {

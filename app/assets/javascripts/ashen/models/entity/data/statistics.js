@@ -5,13 +5,12 @@ var Statistics = function() {
     this.mp = 100;
     this.mpm = 100;
     
-    this.strength = 5;
-    this.defense = 4;
-    this.vitality = 6;
-    this.agility = 3;
-    this.intellect = 2;
-    this.wisdom = 1;
-    this.spirit = 7;
+    this.strength = 10;
+    this.defense = 10;
+    this.vitality = 10;
+    this.agility = 10;
+    this.wisdom = 10;
+    this.spirit = 10;
     
     this.loadFromLevel = function(level) {
         console.log("loading from level", level);
@@ -21,8 +20,7 @@ var Statistics = function() {
         this.strength = level;
         this.defense = level;
         this.vitality = level;
-        this.intellect = level;
-        this.intellect = level;
+        this.agility = level;
         this.wisdom = level;
         this.spirit = level;
     };

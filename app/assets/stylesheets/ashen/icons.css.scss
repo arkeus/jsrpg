@@ -17,3 +17,41 @@ $icon-size: 13px;
   &.earth { @include icon(5, 0); }
   &.water { @include icon(4, 0); }
 }
+
+@mixin item() {
+  
+}
+
+.item {
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1px;
+  margin: 1px 3px;
+  cursor: pointer;
+    
+  border: {
+    top: 1px solid #ccc;
+    left: 2px solid #ccc;
+    right: 2px solid #eee;
+    bottom: 1px solid #eee;
+    radius: 3px;
+  }
+  
+  // Rarities
+  &.common { border-color: #ccc #eee #eee #ccc; }
+  &.uncommon { border-color: #8ab355 #c5f982 #c5f982 #8ab355; }
+  &.rare { border-color: #2a66b6 #6ea3e8 #6ea3e8 #2a66b6; }
+  &.mythic { border-color: #6700b1 #b34aff #b34aff #6700b1; }
+  &.legendary { border-color: #d30000 #ff2b2b #ff2b2b #d30000 ; }
+    
+  &:hover {
+    background-color: #fff;
+  }
+  
+  .item-sprite {
+    width: 22px;
+    height: 22px;
+    background-image: image-url("ashen/items.png");
+    background-position: 0px 0px;
+  }
+}

@@ -1,7 +1,13 @@
 var Player = function($rootScope) {
     angular.extend(this, new Entity($rootScope));
     
+    this.inventory = new Inventory();
+    this.equipped = new EquippedSet();
     this.gold = 0;
+    
+    this.stat = function(type) {
+        return (this.stats[type] || 0) + this.equipped.stat(type);
+    };
     
     this.levelUp = function() {
         this.stats.strength += Math.floor(Math.random() * 3);

@@ -12,16 +12,18 @@
         <script>
             document.createElement('bar');
             document.createElement('log');
+            document.createElement('item');
         </script>
         <![endif]-->
     </head>
     <body>
-        <div id="container" ng-cloak class="ng-cloak">
+        <div id="title">Ashen</div>
+        <div id="container" ng-cloak class="ng-cloak"><div>
             <!-- Player Battle Frame Cell -->
             <div id="player" ng-controller="PlayerController">
                 <div class="name-row">
                     <span class="level">LV<em>{{player.experience.level}}</em></span>
-                    <span class="name">{{player.name}} ({{player.gold}})</span>
+                    <span class="name">{{player.name}}</span>
                 </div>
                 <div class="title-row">
                     <bar type="xp" current="player.experience.xp" max="player.experience.xpm"></bar>
@@ -59,13 +61,30 @@
             </div>
             <!-- Stats Window -->
             <div id="stats" ng-controller="PlayerController">
-                <div class="stat"><span class="name">STRENGTH</span><span class="value">{{player.stats.strength}}</span></div>
-                <div class="stat"><span class="name">DEFENSE</span><span class="value">{{player.stats.defense}}</span></div>
-                <div class="stat"><span class="name">VITALITY</span><span class="value">{{player.stats.vitality}}</span></div>
-                <div class="stat"><span class="name">AGILITY</span><span class="value">{{player.stats.agility}}</span></div>
-                <div class="stat"><span class="name">INTELLECT</span><span class="value">{{player.stats.intellect}}</span></div>
-                <div class="stat"><span class="name">WISDOM</span><span class="value">{{player.stats.wisdom}}</span></div>
-                <div class="stat"><span class="name">SPIRIT</span><span class="value">{{player.stats.spirit}}</span></div>
+                <div class="base-stats">
+                    <div class="stat"><span class="name">STRENGTH</span><span class="value">{{player.stat("strength")}}</span></div>
+                    <div class="stat"><span class="name">DEFENSE</span><span class="value">{{player.stat("defense")}}</span></div>
+                    <div class="stat"><span class="name">VITALITY</span><span class="value">{{player.stat("vitality")}}</span></div>
+                    <div class="stat"><span class="name">AGILITY</span><span class="value">{{player.stat("agility")}}</span></div>
+                    <div class="stat"><span class="name">WISDOM</span><span class="value">{{player.stat("wisdom")}}</span></div>
+                    <div class="stat"><span class="name">SPIRIT</span><span class="value">{{player.stat("spirit")}}</span></div>
+                </div>
+                <div class="resist-stats">
+                    <div class="stat"><span class="name">FIRE RESIST</span><span class="value">{{player.stat("fire-resist")}}%</span></div>
+                    <div class="stat"><span class="name">EARTH RESIST</span><span class="value">{{player.stat("earth-resist")}}%</span></div>
+                    <div class="stat"><span class="name">WATER RESIST</span><span class="value">{{player.stat("water-resist")}}%</span></div>
+                    <div class="stat"><span class="name">FIRE FOCUS</span><span class="value">{{player.stat("fire-focus")}}%</span></div>
+                    <div class="stat"><span class="name">EARTH FOCUS</span><span class="value">{{player.stat("earth-focus")}}%</span></div>
+                    <div class="stat"><span class="name">WATER FOCUS</span><span class="value">{{player.stat("water-focus")}}%</span></div>
+                </div>
+                <div class="extended-stats">
+                    <div class="stat"><span class="name">CRIT CHANCE</span><span class="value">{{player.stat("crit")}}%</span></div>
+                    <div class="stat"><span class="name">CRIT POWER</span><span class="value">{{player.stat("critpower")}}%</span></div>
+                    <div class="stat"><span class="name">AIM</span><span class="value">{{player.stat("aim")}}%</span></div>
+                    <div class="stat"><span class="name">EXP GAIN</span><span class="value">{{player.stat("exp")}}%</span></div>
+                    <div class="stat"><span class="name">LUCK</span><span class="value">{{player.stat("luck")}}%</span></div>
+                    <div class="stat"><span class="name">GREED</span><span class="value">{{player.stat("greed")}}%</span></div>
+                </div>
             </div>
             <div id="combat" ng-controller="GameController">
                 <log id="log">
@@ -78,25 +97,21 @@
                 </log>
             </div>
             <div id="inventory" ng-controller="InventoryController">
+                <div id="equipped">
+                    <item item="player.equipped.weapon" type="weapon" equipped="true" class="weapon"></item>
+                    <item item="player.equipped.helmet" type="helmet" equipped="true" class="helmet"></item>
+                    <item item="player.equipped.chest" type="chest" equipped="true" class="chest"></item>
+                    <item item="player.equipped.boots" type="boots" equipped="true" class="boots"></item>
+                    <item item="player.equipped.pants" type="pants" equipped="true" class="pants"></item>
+                    <item item="player.equipped.amulet" type="amulet" equipped="true" class="amulet"></item>
+                </div>
+                <div id="unequipped">
+                    <item ng-repeat="item in player.inventory.items" item="item"></item>
+                </div>
+            </div>
+            <div id="tabs" ng-controller="PlayerController">
                 GOLD {{player.gold}}
             </div>
-            <div id="tabs"></div>
-        </div>
-        
-        <!--
-        <div ng-controller="PlayerController">
-            Name: {{player.name}}<br>
-            Level: {{player.experience.level}} ({{player.experience.xp}} / {{player.experience.xpm}})<br>
-            Strength: {{player.stats.strength}}<br>
-            Defense: {{player.stats.defense}}<br>
-            Agility: {{player.stats.agility}}<br>
-            Intellect: {{player.stats.intellect}}<br>
-            Wisdom: {{player.stats.wisdom}}<br><br>
-        </div>
-        
-        <div ng-controller="GameController">
-            <div class="experience-button" ng-click="gainExperience(100)">CLICK TO GAIN EXPERIENCE</div>
-        </div>
-        -->
+        </div></div>
     </body>
 </html>

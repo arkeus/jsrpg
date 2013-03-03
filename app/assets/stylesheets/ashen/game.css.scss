@@ -99,6 +99,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  font-size: $font-size-small;
   
   &:hover {
     overflow: auto;
@@ -120,13 +121,39 @@ body {
 }
 
 #stats {
+  .base-stats {
+    width: 115px;
+    float: left;
+    
+    .name {
+      width: 70px;
+    }
+  }
+  
+  .resist-stats {
+    width: 135px;
+    float: left;
+    
+    .name {
+      width: 85px;
+    }
+  }
+  
+  .extended-stats {
+    width: 130px;
+    float: left;
+    
+    .name {
+      width: 80px;
+    }
+  }
+  
   .stat {
     margin-bottom: 3px;
     
     .name {
       font-size: $font-size-small;
       color: $font-color-light;
-      width: 70px;
       display: inline-block;
     }
     
@@ -134,5 +161,38 @@ body {
       font-size: $font-size;
       color: $font-color-dark;
     }
+  }
+}
+
+#inventory {
+  #equipped {
+    width: 140px;
+    height: 241px;
+    //background: #f00;
+    float: left;
+    background: image-url("ashen/doll.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    position: relative;
+    
+    .item {
+      position: absolute;
+    }
+    
+    .weapon { left: 5px; top: 90px; }
+    .helmet { left: 54px; top: 19px; }
+    .chest { left: 54px; top: 80px; }
+    .boots { left: 34px; top: 150px; }
+    .pants { left: 74px; top: 150px; }
+    .amulet { left: 95px; top: 45px; }
+  }
+  
+  #unequipped {
+    width: 240px;
+    height: 241px;
+    //background: #0f0;
+    float: left;
+    overflow-y: hidden;
+    overflow-x: hidden;
   }
 }

@@ -5,6 +5,8 @@ app.run(["$rootScope", function($rootScope) {
         var colorClass = angular.lowercase(type + (typeof subtype === "undefined" ? "" : " " + subtype));
         return "<em class=\"" + colorClass + "\">" + value + "</em>";
     };
+    ItemDatabase.initialize();
+    AffixDatabase.initialize();
 }]);
 
 app.factory("Registry", ["$rootScope", "$timeout", function($rootScope, $timeout) {
@@ -65,3 +67,48 @@ app.directive("bar", function() {
         }
     }
 });
+
+app.directive("item", ["$timeout", "Registry", function($timeout, Registry) {
+    return {
+        restrict: "E",
+        link: function(scope, element, attrs) {
+            var itemObject;
+            
+            function initialize(itemIndicator) {
+                var item = itemObject = scope.$eval(itemIndicator);
+                
+                var index = item == null ? 199 : item.base.index;
+                var rarity = item == null ? "common" : item.rarity;
+                var indexX = (index % 20) * -22;
+                var indexY = Math.floor(index / 20) * -22;
+                var position = indexX + "px " + indexY + "px";
+                
+                var sprite = $("<div></div").addClass("item-sprite").css({ backgroundPosition: position });
+                $(element).addClass("item").addClass(rarity).html(sprite);
+            }
+            
+            initialize(attrs.item);
+            
+            if (attrs.equipped) {
+                scope.$watch(attrs.item, function() {
+                    initialize(attrs.item);
+                });
+                
+                $(element).click(function() {
+                    if (itemObject == null) {
+                        return;
+                    }
+                    $(this).removeClass(itemObject.rarity);
+                    Registry.player.equipped[itemObject.base.type] = null;
+                });
+            } else {
+                $(element).click(function() {
+                    if (itemObject == null) {
+                        return;
+                    }
+                    Registry.player.equipped[itemObject.base.type] = itemObject;
+                });
+            }
+        }
+    }
+}]);
