@@ -13,7 +13,8 @@ app.factory("Registry", ["$rootScope", "$timeout", function($rootScope, $timeout
     $rootScope.Registry = {
         player : new Player($rootScope),
         world : new World($rootScope),
-        log : new Log($rootScope, $timeout)
+        log : new Log($rootScope, $timeout),
+        tooltip : new Tooltip()
     };
         
     return $rootScope.Registry;
@@ -99,6 +100,7 @@ app.directive("item", ["$timeout", "Registry", function($timeout, Registry) {
                         return;
                     }
                     $(this).removeClass(itemObject.rarity);
+                    Registry.player.inventory.add(itemObject);
                     Registry.player.equipped[itemObject.base.type] = null;
                 });
             } else {
@@ -107,8 +109,35 @@ app.directive("item", ["$timeout", "Registry", function($timeout, Registry) {
                         return;
                     }
                     Registry.player.equipped[itemObject.base.type] = itemObject;
+                    Registry.player.inventory.remove(itemObject);
                 });
             }
+        }
+    }
+}]);
+
+app.directive("tooltip", ["Registry", function(Registry) {
+    return {
+        restrict: "A",
+        link: function(scope, element, attrs) {
+            $(element).mouseover(function() {
+                var type = attrs.tooltipType || "string";
+                switch (type) {
+                    case "item":
+                        var content = scope.$eval(attrs.tooltipContent);
+                        Registry.tooltip.showItem(element, content)
+                    break;
+                    case "string":
+                        Registry.tooltip.showString(element, attrs.tooltipContent)
+                    break;
+                }
+                $(this).addClass("tooltip-focus");
+            });
+            
+            $(element).mouseout(function() {
+                Registry.tooltip.hide();
+                $(this).removeClass("tooltip-focus");
+            });
         }
     }
 }]);

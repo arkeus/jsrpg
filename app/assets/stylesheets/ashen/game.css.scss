@@ -196,3 +196,29 @@ body {
     overflow-x: hidden;
   }
 }
+
+#tooltip {
+  @include box-size;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3));
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 350px;
+  left: 250px;
+  
+  #tooltip-content {
+    @include box-size;
+    position: relative;
+    width: 150px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 3px;
+    padding: 2px;
+    color: $font-color-dark;
+    font-size: $font-size;
+  }
+}
+
+.tooltip-focus {
+  color: #fff !important;
+  text-shadow: 0 -2px 5px #000, 0 2px 5px #f00;
+}

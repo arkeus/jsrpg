@@ -62,20 +62,20 @@
             <!-- Stats Window -->
             <div id="stats" ng-controller="PlayerController">
                 <div class="base-stats">
-                    <div class="stat"><span class="name">STRENGTH</span><span class="value">{{player.stat("strength")}}</span></div>
-                    <div class="stat"><span class="name">DEFENSE</span><span class="value">{{player.stat("defense")}}</span></div>
+                    <div class="stat"><span class="name" tooltip tooltip-content="Increases the damage you deal with physical attacks">STRENGTH</span><span class="value">{{player.stat("strength")}}</span></div>
+                    <div class="stat"><span class="name" tooltip tooltip-content="LOL">DEFENSE</span><span class="value">{{player.stat("defense")}}</span></div>
                     <div class="stat"><span class="name">VITALITY</span><span class="value">{{player.stat("vitality")}}</span></div>
                     <div class="stat"><span class="name">AGILITY</span><span class="value">{{player.stat("agility")}}</span></div>
                     <div class="stat"><span class="name">WISDOM</span><span class="value">{{player.stat("wisdom")}}</span></div>
                     <div class="stat"><span class="name">SPIRIT</span><span class="value">{{player.stat("spirit")}}</span></div>
                 </div>
                 <div class="resist-stats">
-                    <div class="stat"><span class="name">FIRE RESIST</span><span class="value">{{player.stat("fire-resist")}}%</span></div>
-                    <div class="stat"><span class="name">EARTH RESIST</span><span class="value">{{player.stat("earth-resist")}}%</span></div>
-                    <div class="stat"><span class="name">WATER RESIST</span><span class="value">{{player.stat("water-resist")}}%</span></div>
-                    <div class="stat"><span class="name">FIRE FOCUS</span><span class="value">{{player.stat("fire-focus")}}%</span></div>
-                    <div class="stat"><span class="name">EARTH FOCUS</span><span class="value">{{player.stat("earth-focus")}}%</span></div>
-                    <div class="stat"><span class="name">WATER FOCUS</span><span class="value">{{player.stat("water-focus")}}%</span></div>
+                    <div class="stat"><span class="name">FIRE RESIST</span><span class="value">{{player.stat("resist-fire")}}%</span></div>
+                    <div class="stat"><span class="name">EARTH RESIST</span><span class="value">{{player.stat("resist-earth")}}%</span></div>
+                    <div class="stat"><span class="name">WATER RESIST</span><span class="value">{{player.stat("resist-water")}}%</span></div>
+                    <div class="stat"><span class="name">FIRE FOCUS</span><span class="value">{{player.stat("focus-fire")}}%</span></div>
+                    <div class="stat"><span class="name">EARTH FOCUS</span><span class="value">{{player.stat("focus-earth")}}%</span></div>
+                    <div class="stat"><span class="name">WATER FOCUS</span><span class="value">{{player.stat("focus-water")}}%</span></div>
                 </div>
                 <div class="extended-stats">
                     <div class="stat"><span class="name">CRIT CHANCE</span><span class="value">{{player.stat("crit")}}%</span></div>
@@ -106,12 +106,13 @@
                     <item item="player.equipped.amulet" type="amulet" equipped="true" class="amulet"></item>
                 </div>
                 <div id="unequipped">
-                    <item ng-repeat="item in player.inventory.items" item="item"></item>
+                    <item ng-repeat="item in player.inventory.items" item="item" tooltip tooltip-type="item" tooltip-content="item"></item>
                 </div>
             </div>
             <div id="tabs" ng-controller="PlayerController">
                 GOLD {{player.gold}}
             </div>
         </div></div>
+        <div id="tooltip"><div id="tooltip-content">Tooltip goes here</div></div>
     </body>
 </html>

@@ -1,4 +1,4 @@
-var ItemDatabase = new (function() {
+var ItemDatabase = new function() {
     this.TIERS = [
         "Dwarven", "Scarab", "Golem", "Dryad", "Demon", "Elven", "Titan", "Dragon", "Valkyrie"
     ];
@@ -44,8 +44,34 @@ var ItemDatabase = new (function() {
         }
     };
     
-    this.random = function() {
-        var base = this.DATABASE[Math.floor(Math.random() * (this.DATABASE.length - 1))];
-        return new Item(base);
+    this.random = function(level) {
+        var type = Math.random() < 0.3 ? "weapon" : null;
+        var minLevel = Math.max(1, Math.min(80, level - 20));
+        var maxLevel = Math.min(100, level);
+        var eligible = [];
+        
+        var item;
+        for (var i = 0; i < this.DATABASE.length; i++) {
+            item = this.DATABASE[i];
+            if (item.level < minLevel || item.level > maxLevel || (type != null && item.type != type)) {
+                continue;
+            }
+            eligible.push(item);
+        }
+        if (eligible.length < 1) {
+            throw new Exception("FUCK ME");
+        }
+        
+        var inv = new Item(eligible[Utils.random(0, eligible.length - 1)]);
+        
+        // Choose affixes
+        if (Math.random() < 0.7) {
+            inv.prefix = AffixDatabase.random(level, "prefix");
+        }
+        if (Math.random() < 0.7) {
+            inv.suffix = AffixDatabase.random(level, "suffix");
+        }
+        
+        return inv;
     };
-})();
+};

@@ -1,4 +1,4 @@
-var AffixDatabase = new (function() {
+var AffixDatabase = new function() {
     this.AFFIXES = [
         ////// PREFIX
         
@@ -22,11 +22,15 @@ var AffixDatabase = new (function() {
         ["Targeted", "prefix", "common", { "aim": 0.1 }],
         ["Hopeful", "prefix", "common", { "exp": 0.1 }],
         
-        // RESISTS
+        // RESISTS / FOCUS
         
         ["Firewall", "prefix", "common", { "resist-fire": 0.3 }, 10],
         ["Waterwall", "prefix", "common", { "resist-water": 0.3 }, 10],
         ["Earthwall", "prefix", "common", { "resist-earth": 0.3 }, 10],
+        
+        ["Firedrawn", "prefix", "common", { "focus-fire": 0.3 }, 10],
+        ["Waterdrawn", "prefix", "common", { "focus-water": 0.3 }, 10],
+        ["Earthdrawn", "prefix", "common", { "focus-earth": 0.3 }, 10],
         
         //// RARE
         
@@ -48,11 +52,15 @@ var AffixDatabase = new (function() {
         ["Centered", "prefix", "rare", { "aim": 0.15 }],
         ["Calm", "prefix", "rare", { "exp": 0.15 }],
         
-        // RESIST
+        // RESIST / FOCUS
         
-        ["Flamewall", "prefix", "rare", { "resist-fire": 0.5 }, 15],
-        ["Tidewall", "prefix", "rare", { "resist-water": 0.5 }, 15],
-        ["Stonewall", "prefix", "rare", { "resist-earth": 0.5 }, 15],
+        ["Flameguard", "prefix", "rare", { "resist-fire": 0.5 }, 15],
+        ["Tideguard", "prefix", "rare", { "resist-water": 0.5 }, 15],
+        ["Stoneguard", "prefix", "rare", { "resist-earth": 0.5 }, 15],
+        
+        ["Flamebound", "prefix", "rare", { "focus-fire": 0.5 }, 15],
+        ["Tidebound", "prefix", "rare", { "focus-water": 0.5 }, 15],
+        ["Stonebound", "prefix", "rare", { "focus-earth": 0.5 }, 15],
         
         // DUAL RESIST
         
@@ -119,7 +127,20 @@ var AffixDatabase = new (function() {
         }
     };
     
-    this.random = function() {
-        return this.DATABASE[Math.floor(Math.random() * (this.DATABASE.length - 1))];
+    this.random = function(level, type) {
+        var rarity = Math.random() < 0.25 ? "rare" : "common";
+        
+        var eligible = [];
+        for (var i = 0; i < this.DATABASE.length; i++) {
+            var aff = this.DATABASE[i];
+            if (aff.type == type && aff.rarity == rarity) {
+                eligible.push(aff);
+            }
+        }
+        if (eligible.length < 1) {
+            throw new Exception("SHIT");
+        }
+        
+        return eligible[Utils.random(0, eligible.length - 1)];
     };
-})();
+};
