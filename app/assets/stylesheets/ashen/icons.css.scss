@@ -1,3 +1,5 @@
+@import "constants";
+
 $icon-size: 13px;
 
 @mixin icon($x, $y) {
@@ -40,11 +42,11 @@ $icon-size: 13px;
   }
   
   // Rarities
-  &.common { border-color: #ccc #eee #eee #ccc; }
-  &.uncommon { border-color: #8ab355 #c5f982 #c5f982 #8ab355; }
-  &.rare { border-color: #2a66b6 #6ea3e8 #6ea3e8 #2a66b6; }
-  &.mythic { border-color: #6700b1 #b34aff #b34aff #6700b1; }
-  &.legendary { border-color: #d30000 #ff2b2b #ff2b2b #d30000 ; }
+  &.common { border-color: $common-color-dark $common-color-light $common-color-light $common-color-dark; }
+  &.uncommon { border-color: $uncommon-color-dark $uncommon-color-light $uncommon-color-light $uncommon-color-dark; }
+  &.rare { border-color: $rare-color-dark $rare-color-light $rare-color-light $rare-color-dark; }
+  &.mythic { border-color: $mythic-color-dark $mythic-color-light $mythic-color-light $mythic-color-dark; }
+  &.legendary { border-color: $legendary-color-dark $legendary-color-light $legendary-color-light $legendary-color-dark ; }
     
   &:hover {
     background-color: #fff;

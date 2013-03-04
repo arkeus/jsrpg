@@ -11,7 +11,7 @@ var Tooltip = function() {
         $("#tooltip").css({
             left: attrs['right'] + (options['offsetX'] || 6),
             top: attrs['top'] + (options['offsetY'] || 0)
-        }).show();
+        }).removeClass().addClass(options['colorClass']).show();
     };
     
     this.showString = function(element, value) {
@@ -38,7 +38,7 @@ var Tooltip = function() {
             price: "PRICE: " + item.price() + "G",
             attributes: attributes
         });
-        this.show(element, template, { width: "200px", offsetX: 8 });
+        this.show(element, template, { width: "200px", offsetX: 8, colorClass: item.rarity() });
     };
     
     this.hide = function() {

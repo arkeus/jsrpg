@@ -203,11 +203,53 @@ body {
 
 #tooltip {
   @include box-size;
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), rgba(255, 0, 0, 0.3));
   border-radius: 5px;
   padding: 5px;
   position: absolute;
   display: none;
+  background: rgba(0, 0, 0, 0.5);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+  background:    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+  background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+  background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+  background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5));
+  
+  // rarity based border
+  &.common {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+    background:    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+    background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+    background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
+    background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5));
+  }
+  &.uncommon {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5)); 
+    background:    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5)); 
+    background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5)); 
+    background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5)); 
+    background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5));
+  }
+  &.rare {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5)); 
+    background:    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5)); 
+    background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5)); 
+    background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5)); 
+    background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5));
+  }
+  &.mythic {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5)); 
+    background:    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5)); 
+    background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5)); 
+    background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5)); 
+    background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5));
+  }
+  &.legendary {
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5)); 
+    background:    -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5)); 
+    background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5)); 
+    background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5)); 
+    background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5));
+  }
   
   #tooltip-content {
     @include box-size;
@@ -244,6 +286,7 @@ body {
     .effect {
       float: right;
       color: $font-color-halflight;
+      font-size: $font-size-small;
     }
     
     .type {
