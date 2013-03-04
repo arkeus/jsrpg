@@ -100,16 +100,14 @@ app.directive("item", ["$timeout", "Registry", function($timeout, Registry) {
                         return;
                     }
                     $(this).removeClass(itemObject.rarity);
-                    Registry.player.inventory.add(itemObject);
-                    Registry.player.equipped[itemObject.base.type] = null;
+                    Registry.player.unequip(itemObject);
                 });
             } else {
                 $(element).click(function() {
                     if (itemObject == null) {
                         return;
                     }
-                    Registry.player.equipped[itemObject.base.type] = itemObject;
-                    Registry.player.inventory.remove(itemObject);
+                    Registry.player.equip(itemObject);
                 });
             }
         }

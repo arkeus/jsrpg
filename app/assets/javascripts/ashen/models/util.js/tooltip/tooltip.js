@@ -19,6 +19,10 @@ var Tooltip = function() {
     };
     
     this.showItem = function(element, item) {
+        if (item == null) {
+            return;
+        }
+        
         var attributes = "";
         for (var attr in ALL_STATISTICS) {
             var name = ALL_STATISTICS[attr];

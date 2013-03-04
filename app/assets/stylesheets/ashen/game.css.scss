@@ -221,6 +221,7 @@ body {
     background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
     background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)); 
     background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5));
+    strong { color: $common-color-dark; }
   }
   &.uncommon {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5)); 
@@ -228,6 +229,7 @@ body {
     background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5)); 
     background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5)); 
     background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(147, 219, 53, 0.5));
+    strong { color: $uncommon-color-dark; }
   }
   &.rare {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5)); 
@@ -235,6 +237,7 @@ body {
     background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5)); 
     background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5)); 
     background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(36, 117, 222, 0.5));
+    strong { color: $rare-color-dark; }
   }
   &.mythic {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5)); 
@@ -242,6 +245,7 @@ body {
     background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5)); 
     background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5)); 
     background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(143, 32, 222, 0.5));
+    strong { color: $mythic-color-dark; }
   }
   &.legendary {
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5)); 
@@ -249,6 +253,7 @@ body {
     background:     -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5)); 
     background:      -o-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5)); 
     background:         linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(244, 14, 14, 0.5));
+    strong { color: $legendary-color-dark; }
   }
   
   #tooltip-content {
@@ -296,10 +301,6 @@ body {
     
     .attributes {
       font-size: $font-size-halfsmall;
-      
-      strong {
-        color: #549705;
-      }
     }
     
     .price {
@@ -317,5 +318,5 @@ body {
 
 .tooltip-focus {
   color: #fff !important;
-  text-shadow: 0 -2px 5px #000, 0 2px 5px #f00;
+  text-shadow: 0 -2px 5px #000, 0 2px 5px #999;
 }

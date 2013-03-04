@@ -30,4 +30,21 @@ var Player = function($rootScope) {
         this.gold += amount;
         $rootScope.Registry.log.add("You found " + $rootScope.color(amount, "gold") + " gold.");
     };
+    
+    this.equip = function(item) {
+        if (item == null) {
+            return;
+        }
+        this.unequip(this.equipped[item.base.type]);
+        this.equipped[item.base.type] = item;
+        this.inventory.remove(item);
+    };
+    
+    this.unequip = function(item) {
+        if (item == null) {
+            return;
+        }
+        this.inventory.add(item);
+        this.equipped[item.base.type] = null;
+    };
 }

@@ -98,12 +98,12 @@
             </div>
             <div id="inventory" ng-controller="InventoryController">
                 <div id="equipped">
-                    <item item="player.equipped.weapon" type="weapon" equipped="true" class="weapon"></item>
-                    <item item="player.equipped.helmet" type="helmet" equipped="true" class="helmet"></item>
-                    <item item="player.equipped.chest" type="chest" equipped="true" class="chest"></item>
-                    <item item="player.equipped.boots" type="boots" equipped="true" class="boots"></item>
-                    <item item="player.equipped.pants" type="pants" equipped="true" class="pants"></item>
-                    <item item="player.equipped.amulet" type="amulet" equipped="true" class="amulet"></item>
+                    <item item="player.equipped.weapon" type="weapon" equipped="true" class="weapon" tooltip tooltip-type="item" tooltip-content="player.equipped.weapon"></item>
+                    <item item="player.equipped.helmet" type="helmet" equipped="true" class="helmet" tooltip tooltip-type="item" tooltip-content="player.equipped.helmet"></item>
+                    <item item="player.equipped.chest" type="chest" equipped="true" class="chest" tooltip tooltip-type="item" tooltip-content="player.equipped.chest"></item>
+                    <item item="player.equipped.boots" type="boots" equipped="true" class="boots" tooltip tooltip-type="item" tooltip-content="player.equipped.boots"></item>
+                    <item item="player.equipped.pants" type="pants" equipped="true" class="pants" tooltip tooltip-type="item" tooltip-content="player.equipped.pants"></item>
+                    <item item="player.equipped.amulet" type="amulet" equipped="true" class="amulet" tooltip tooltip-type="item" tooltip-content="player.equipped.amulet"></item>
                 </div>
                 <div id="unequipped">
                     <item ng-repeat="item in player.inventory.items" item="item" tooltip tooltip-type="item" tooltip-content="item"></item>

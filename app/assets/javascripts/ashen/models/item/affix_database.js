@@ -85,8 +85,8 @@ var AffixDatabase = new function() {
         
         ["of Greed", "suffix", "common", { "greed": 0.1 }],
         ["of Luck", "suffix", "common", { "luck": 0.1 }],
-        ["of Ferocity", "suffix", "common", { "critpower": 0.1 }],
-        ["of Haste", "suffix", "common", { "haste": 0.1 }],
+        ["of Ferocity", "suffix", "common", { "crit": 0.1 }],
+        ["of Haste", "suffix", "common", { "critpower": 0.1 }],
         ["of Aim", "suffix", "common", { "aim": 0.1 }],
         ["of Faith", "suffix", "common", { "exp": 0.1 }],
         
