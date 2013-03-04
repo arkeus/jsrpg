@@ -1,6 +1,13 @@
 == JSRPG
 
-Ashen: http://jsrpg.io/ashen
+== Projects Contained
+
+=== Ashen
+
+Semi-Idle RPG written using AngularJS. 
+http://jsrpg.io/ashen
+
+== FAQ
 
 === What?
 
@@ -8,7 +15,7 @@ A set of client-side javascript based rpgs.
 
 === Why?
 
-To learn AngularJS (and perhaps other javascript frameworks). Will be making multiple rpgs, possibly with different frameworks.
+To learn AngularJS (and perhaps other javascript frameworks). Will be making multiple rpgs (perhaps other game types also), possibly with different frameworks.
 
 === Who?
 
@@ -19,9 +26,3 @@ http://iarke.us
 === Why rails?
 
 To take advantage of the assets pipeline for compilation of sass and minification, routing for multiple projects within a single domain, and because I've already set up a VPS to host multiple rails projects easily via nginx+passenger.
-
-== Projects Contained
-
-=== Ashen
-
-Semi-Idle RPG written using AngularJS. 

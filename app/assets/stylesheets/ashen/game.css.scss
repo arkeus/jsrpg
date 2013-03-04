@@ -121,6 +121,10 @@ body {
 }
 
 #stats {
+  .name {
+    cursor: help;
+  }
+  
   .base-stats {
     width: 115px;
     float: left;
