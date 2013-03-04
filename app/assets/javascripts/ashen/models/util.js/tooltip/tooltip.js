@@ -30,7 +30,7 @@ var Tooltip = function() {
         }
         
         var template = this.compileTemplate(this.ITEM_TEMPLATE, {
-            name: item.name(),
+            name: "<span class='" + item.rarity() + "'>" + item.name() + "</span>",
             type: item.base.type.toUpperCase(),
             subtype: item.base.subtype.toUpperCase(),
             effect: item.effect(),

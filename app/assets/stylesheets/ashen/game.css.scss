@@ -229,6 +229,12 @@ body {
     .name {
       font-weight: bold;
       color: $font-color-dark;
+      
+      .common { color: #666; }
+      .uncommon { color: #8ab355; }
+      .rare { color: #2a66b6; }
+      .mythic { color: #6700b1; }
+      .legendary { color: #d30000; }
     }
     
     .effect {
