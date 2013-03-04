@@ -16,6 +16,10 @@ Arkeus
 @arkeus
 http://iarke.us
 
+=== Why rails?
+
+To take advantage of the assets pipeline for compilation of sass and minification, routing for multiple projects within a single domain, and because I've already set up a VPS to host multiple rails projects easily via nginx+passenger.
+
 == Projects Contained
 
 === Ashen
