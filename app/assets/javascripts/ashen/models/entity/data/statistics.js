@@ -17,12 +17,12 @@ var Statistics = function() {
         this.hp = this.hpm = 10 + level * 2;
         this.mp = this.mpm = 10 + level * 2;
         
-        this.strength = level;
-        this.defense = level;
-        this.vitality = level;
-        this.agility = level;
-        this.wisdom = level;
-        this.spirit = level;
+        this.strength = 10 + level;
+        this.defense = 10 + level;
+        this.vitality = 10 + level;
+        this.agility = 10 + level;
+        this.wisdom = 10 + level;
+        this.spirit = 10 + level;
     };
 }
 

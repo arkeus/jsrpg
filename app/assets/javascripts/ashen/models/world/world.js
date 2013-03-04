@@ -26,11 +26,19 @@ var World = function($rootScope) {
     };
     
     this.combat = function() {
-        var damage = Math.ceil(Math.random() * 3 + 2);
+        var player = $rootScope.Registry.player;
+        var damage = this.calculateDamage(player, this.enemy, 4);
         $rootScope.Registry.log.add("You attack the " + this.enemy.getColoredName() + " for " + $rootScope.color(damage, "element", "fire") + " damage.");
         this.enemy.damage(damage);
         if (this.enemy.isDead()) {
             this.enemy = null;
         }
+    };
+    
+    this.calculateDamage = function(source, target, abilityPower /*TODO: ability*/) {
+        var sourcePower = "strength";
+        var targetDefense = "defense";
+        var damage = abilityPower * (1 + source.stat(sourcePower)) / (1 + target.stat(targetDefense)) * Math.max(0.25, (1 + (source.experience.level - target.experience.level) / 100));
+        return Math.ceil(damage);
     };
 };
