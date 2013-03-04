@@ -203,19 +203,62 @@ body {
   border-radius: 5px;
   padding: 5px;
   position: absolute;
-  top: 350px;
-  left: 250px;
   display: none;
   
   #tooltip-content {
     @include box-size;
     position: relative;
-    width: 150px;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 3px;
-    padding: 2px;
+    padding: 4px;
     color: $font-color-dark;
     font-size: $font-size;
+    font-family: verdana;
+    
+    .row {
+      clear: both;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1px;
+      font-size: $font-size;
+      
+      &.bottom {
+        border-bottom-width: 0px;
+      }
+    }
+    
+    .name {
+      font-weight: bold;
+      color: $font-color-dark;
+    }
+    
+    .effect {
+      float: right;
+      color: $font-color-halflight;
+    }
+    
+    .type {
+      color: $font-color-halflight;
+      font-size: $font-size-small;
+    }
+    
+    .attributes {
+      font-size: $font-size-halfsmall;
+      
+      strong {
+        color: #549705;
+      }
+    }
+    
+    .price {
+      float: right;
+      color: $font-color-halflight;
+      font-size: $font-size-small;
+    }
+    
+    .level {
+      color: $font-color-halflight;
+      font-size: $font-size-small;
+    }
   }
 }
 

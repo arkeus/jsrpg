@@ -25,3 +25,24 @@ var Statistics = function() {
         this.spirit = level;
     };
 }
+
+var ALL_STATISTICS = {
+    "strength": "Strength",
+    "defense": "Defense",
+    "vitality": "Vitality",
+    "agility": "Agility",
+    "wisdom": "Wisdom",
+    "spirit": "Spirit",
+    "crit": "Crit Chance",
+    "critpower": "Crit Power",
+    "aim": "Aim",
+    "exp": "Exp Gain",
+    "luck": "Luck",
+    "greed": "Greed",
+    "resist-fire": "Fire Resistance",
+    "resist-water": "Water Resistance",
+    "resist-earth": "Earth Resistance",
+    "focus-fire": "Fire Focus",
+    "focus-water": "Water Focus",
+    "focus-earth": "Earth Focus",
+};
