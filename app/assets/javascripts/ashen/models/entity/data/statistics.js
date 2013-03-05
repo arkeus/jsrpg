@@ -13,7 +13,6 @@ var Statistics = function() {
     this.spirit = 10;
     
     this.loadFromLevel = function(level) {
-        console.log("loading from level", level);
         this.hp = this.hpm = 10 + level * 2;
         this.mp = this.mpm = 10 + level * 2;
         
