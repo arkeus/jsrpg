@@ -15,7 +15,7 @@ var Player = function($rootScope) {
         this.stats.agility += Math.floor(Math.random() * 3);
         this.stats.intellect += Math.floor(Math.random() * 3);
         this.stats.wisdom += Math.floor(Math.random() * 3);
-    }
+    };
     
     this.gainExperience = function(level) {
         var experience = level * 70;

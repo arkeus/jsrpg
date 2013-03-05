@@ -16,7 +16,7 @@ var Entity = function($rootScope) {
         this.stats.hp -= damage;
         if (this.stats.hp <= 0) {
             this.stats.hp = 0;
-            this.die();
+            //this.die();
         }
     };
     
@@ -24,8 +24,9 @@ var Entity = function($rootScope) {
         return this.stats.hp <= 0;
     };
     
-    this.die = function() {
-        // abstract
+    this.restore = function() {
+        this.stats.hp = this.stats.hpm;
+        this.stats.mp = this.stats.mpm;
     };
     
     this.getColoredName = function() {

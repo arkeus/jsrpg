@@ -1,9 +1,9 @@
 var Statistics = function() {
-    this.hp = 100;
-    this.hpm = 100;
+    this.hp = 50;
+    this.hpm = 50;
     
-    this.mp = 100;
-    this.mpm = 100;
+    this.mp = 10;
+    this.mpm = 10;
     
     this.strength = 10;
     this.defense = 10;
