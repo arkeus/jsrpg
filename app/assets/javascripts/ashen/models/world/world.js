@@ -71,6 +71,14 @@ var World = function($rootScope) {
         this.log.add("You defeated the " + this.enemy.getColoredName());
         this.player.gainExperience(this.enemy.experience.level);
         this.player.gainGold(Math.ceil(Math.random() * 10));
+        if (Math.random() < 0.9) {
+            var obtained = this.player.inventory.add(ItemDatabase.random(this.enemy.experience.level));
+            if (obtained) {
+                this.log.add("You found a " + $rootScope.color(obtained.name(), "rarity", obtained.rarity()) + "!");
+            } else {
+                this.log.add("You find something on the corpse but your inventory is full.");
+            }
+        }
         this.enemy = null;
     };
     

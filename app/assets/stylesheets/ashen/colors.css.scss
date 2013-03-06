@@ -1,3 +1,5 @@
+@import "constants";
+
 // Elements for damage, enemies, pets
 .element {
   &.fire { color: #e31b1b; }
@@ -11,4 +13,12 @@
 
 .gold {
   color: #e3a318;
+}
+
+.rarity {
+  &.common { color: $common-color-dark; }
+  &.uncommon { color: $uncommon-color-dark; }
+  &.rare { color: $rare-color-dark; }
+  &.mythic { color: $mythic-color-dark; }
+  &.legendary { color: $legendary-color-dark; }
 }
