@@ -71,7 +71,7 @@ var World = function($rootScope) {
         this.log.add("You defeated the " + this.enemy.getColoredName());
         this.player.gainExperience(this.enemy.experience.level);
         this.player.gainGold(Math.ceil(Math.random() * 10));
-        if (Math.random() < 0.9) {
+        if (Math.random() < 0.5) {
             var obtained = this.player.inventory.add(ItemDatabase.random(this.enemy.experience.level));
             if (obtained) {
                 this.log.add("You found a " + $rootScope.color(obtained.name(), "rarity", obtained.rarity()) + "!");
