@@ -56,15 +56,11 @@ var World = function($rootScope) {
     };
     
     this.handlePlayerCombat = function() {
-        var damage = this.calculateDamage(this.player, this.enemy, 4);
-        this.log.add("You attack the " + this.enemy.getColoredName() + " for " + $rootScope.color(damage, "element", "fire") + " damage.");
-        this.enemy.damage(damage);
+        var damage = this.calculateAttack(this.player, this.enemy, SpellDatabase.MELEE);
     };
     
     this.handleEnemyCombat = function() {
-        var damage = this.calculateDamage(this.enemy, this.player, 4);
-        this.log.add("The " + this.enemy.getColoredName() + " attacks you for " + $rootScope.color(damage, "element", "fire") + " damage.");
-        this.player.damage(damage);
+        var damage = this.calculateAttack(this.enemy, this.player, SpellDatabase.MELEE);
     };
     
     this.handleWin = function() {
@@ -74,7 +70,7 @@ var World = function($rootScope) {
         if (Math.random() < 0.5) {
             var obtained = this.player.inventory.add(ItemDatabase.random(this.enemy.experience.level));
             if (obtained) {
-                this.log.add("You found a " + $rootScope.color(obtained.name(), "rarity", obtained.rarity()) + "!");
+                this.log.add("You found a <strong>" + $rootScope.color(obtained.name(), "rarity", obtained.rarity()) + "</strong>!");
             } else {
                 this.log.add("You find something on the corpse but your inventory is full.");
             }
@@ -87,10 +83,18 @@ var World = function($rootScope) {
         this.enemy = null;
     };
     
-    this.calculateDamage = function(source, target, abilityPower /*TODO: ability*/) {
+    this.calculateAttack = function(source, target, spell) {
         var sourcePower = "strength";
         var targetDefense = "defense";
-        var damage = abilityPower * (1 + source.stat(sourcePower)) / (1 + target.stat(targetDefense)) * Math.max(0.25, (1 + (source.experience.level - target.experience.level) / 100));
-        return Math.ceil(damage);
+        console.log("huh", spell, SpellDatabase.MELEE, spell == SpellDatabase.MELEE);
+        var abilityPower = spell == SpellDatabase.MELEE ? 4 : spell.power(source.experience.level);
+        var damage = Math.ceil(abilityPower * (1 + source.stat(sourcePower)) / (1 + target.stat(targetDefense)) * Math.max(0.25, (1 + (source.experience.level - target.experience.level) / 100)));
+        target.damage(damage);
+        
+        var damageSource = spell == SpellDatabase.MELEE ? "your weapon" : $rootScope.color(spell.name, "element", spell.element);
+        var sourceName = source instanceof Player ? "You attack" : "The " + source.getColoredName() + " attacks";
+        var targetName = target instanceof Player ? "you" : "the " + target.getColoredName();
+        
+        this.log.add(sourceName + " " + targetName + " with " + damageSource + " for " + $rootScope.color(damage, "element", "fire") + " damage.");
     };
 };

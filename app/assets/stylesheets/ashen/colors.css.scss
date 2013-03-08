@@ -16,9 +16,9 @@
 }
 
 .rarity {
-  &.common { color: $common-color-dark; }
-  &.uncommon { color: $uncommon-color-dark; }
-  &.rare { color: $rare-color-dark; }
-  &.mythic { color: $mythic-color-dark; }
-  &.legendary { color: $legendary-color-dark; }
+  &.common { color: $common-color; }
+  &.uncommon { color: $uncommon-color; }
+  &.rare { color: $rare-color; }
+  &.mythic { color: $mythic-color; }
+  &.legendary { color: $legendary-color; }
 }
