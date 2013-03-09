@@ -86,7 +86,6 @@ var World = function($rootScope) {
     this.calculateAttack = function(source, target, spell) {
         var sourcePower = "strength";
         var targetDefense = "defense";
-        console.log("huh", spell, SpellDatabase.MELEE, spell == SpellDatabase.MELEE);
         var abilityPower = spell == SpellDatabase.MELEE ? 4 : spell.power(source.experience.level);
         var damage = Math.ceil(abilityPower * (1 + source.stat(sourcePower)) / (1 + target.stat(targetDefense)) * Math.max(0.25, (1 + (source.experience.level - target.experience.level) / 100)));
         target.damage(damage);
