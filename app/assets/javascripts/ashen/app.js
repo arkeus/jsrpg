@@ -37,7 +37,6 @@ app.directive("log", ["$timeout", function($timeout) {
                         scrollToBottom();
                     }, 0);
                 }
-                
             });
             
             $(window).focus(function() {
