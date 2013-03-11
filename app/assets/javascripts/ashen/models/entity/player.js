@@ -1,8 +1,9 @@
 var Player = function($rootScope) {
     angular.extend(this, new Entity($rootScope));
     
-    this.inventory = new Inventory();
-    this.equipped = new EquippedSet();
+    this.inventory = new Inventory;
+    this.equipped = new EquippedSet;
+    this.spellbook = new Spellbook;
     this.gold = 0;
     
     this.stat = function(type) {
