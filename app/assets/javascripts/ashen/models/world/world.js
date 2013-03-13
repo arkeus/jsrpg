@@ -56,11 +56,12 @@ var World = function($rootScope) {
     };
     
     this.handlePlayerCombat = function() {
-        var damage = this.calculateAttack(this.player, this.enemy, SpellDatabase.MELEE);
+        this.attack(this.player, this.enemy, SpellDatabase.MELEE);
+        this.playerCast();
     };
     
     this.handleEnemyCombat = function() {
-        var damage = this.calculateAttack(this.enemy, this.player, SpellDatabase.MELEE);
+        this.attack(this.enemy, this.player, SpellDatabase.MELEE);
     };
     
     this.handleWin = function() {
@@ -83,7 +84,7 @@ var World = function($rootScope) {
         this.enemy = null;
     };
     
-    this.calculateAttack = function(source, target, spell) {
+    this.attack = function(source, target, spell) {
         var sourcePower = "strength";
         var targetDefense = "defense";
         var abilityPower = spell == SpellDatabase.MELEE ? 4 : spell.power(source.experience.level);
@@ -95,5 +96,20 @@ var World = function($rootScope) {
         var targetName = target instanceof Player ? "you" : "the " + target.getColoredName();
         
         this.log.add(sourceName + " " + targetName + " with " + damageSource + " for " + $rootScope.color(damage, "element", "fire") + " damage.");
+    };
+    
+    this.playerCast = function() {
+        var equipped = this.player.spellbook.equipped;
+        for (var i = 0; i < equipped.length; i++) {
+            var index = equipped[i];
+            if (!index) {
+                continue;
+            }
+            var spell = SpellDatabase.DATABASE[index];
+            var spellData = this.player.spellbook.spells[index];
+            if (Math.random() < 0.5) {
+                this.attack(this.player, this.enemy, spell);
+            }
+        }
     };
 };
