@@ -12,6 +12,8 @@ var Statistics = function() {
     this.wisdom = 10;
     this.spirit = 10;
     
+    this.castChance = 0.1;
+    
     this.loadFromLevel = function(level) {
         this.hp = this.hpm = 10 + level * 2;
         this.mp = this.mpm = 10 + level * 2;

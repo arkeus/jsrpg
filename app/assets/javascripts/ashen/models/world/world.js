@@ -107,7 +107,7 @@ var World = function($rootScope) {
             }
             var spell = SpellDatabase.DATABASE[index];
             var spellData = this.player.spellbook.spells[index];
-            if (Math.random() < 0.5) {
+            if (Math.random() < this.player.stat("castChance")) {
                 this.attack(this.player, this.enemy, spell);
             }
         }
