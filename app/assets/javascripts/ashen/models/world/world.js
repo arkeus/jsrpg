@@ -107,8 +107,9 @@ var World = function($rootScope) {
             }
             var spell = SpellDatabase.DATABASE[index];
             var spellData = this.player.spellbook.spells[index];
-            if (Math.random() < this.player.stat("castChance")) {
+            if (Math.random() < this.player.stat("castChance") && this.player.stats.mp >= spell.mp) {
                 this.attack(this.player, this.enemy, spell);
+                this.player.stats.mp -= spell.mp;
             }
         }
     };
