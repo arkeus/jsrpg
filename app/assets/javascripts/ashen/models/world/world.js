@@ -84,7 +84,8 @@ var World = function($rootScope) {
         this.enemy = null;
     };
     
-    this.attack = function(source, target, spell) {
+    this.attack = function(source, target, spell, level) {
+        level = level || 1;
         var sourcePower = "strength";
         var targetDefense = "defense";
         var abilityPower = spell == SpellDatabase.MELEE ? 4 : spell.power(source.experience.level);
@@ -108,8 +109,11 @@ var World = function($rootScope) {
             var spell = SpellDatabase.DATABASE[index];
             var spellData = this.player.spellbook.spells[index];
             if (Math.random() < this.player.stat("castChance") && this.player.stats.mp >= spell.mp) {
-                this.attack(this.player, this.enemy, spell);
+                this.attack(this.player, this.enemy, spell, spellData.level);
                 this.player.stats.mp -= spell.mp;
+                if (spellData.gain(90)) {
+                    this.log.add("Your " + spell.name + " spell has reached level " + spellData.level + "!");
+                }
             }
         }
     };

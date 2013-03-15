@@ -21,7 +21,7 @@ var SpellDatabase = new function() {
             name: "Meteor",
             description: "Summons a meteor from the sky, crushing your enemy and burning them over time.",
             element: Element.FIRE,
-            mp: 14,
+            mp: 9,
             power: function(level) { return 12 + level * 3; },
             debuff: new Debuff("Meteor Burn", 100, 5, function() { return level * 4; })
         }),
@@ -57,7 +57,7 @@ var SpellDatabase = new function() {
             name: "Quake",
             description: "Shakes the earth beneath your opponent, damaging them, and causing them to lose their balance and miss more.",
             element: Element.EARTH,
-            mp: 19,
+            mp: 11,
             power: function(level) { return 15 + level * 3; },
             debuff: new Debuff("Unbalanced", 100, 2, function(level) { return 10 + level * 2; })
         }),
