@@ -111,7 +111,7 @@ var World = function($rootScope) {
             if (Math.random() < this.player.stat("castChance") && this.player.stats.mp >= spell.mp) {
                 this.attack(this.player, this.enemy, spell, spellData.level);
                 this.player.stats.mp -= spell.mp;
-                if (spellData.gain(90)) {
+                if (spellData.gain(SPELL_EXP_PER_CAST)) {
                     this.log.add("Your " + spell.name + " spell has reached level " + spellData.level + "!");
                 }
             }
