@@ -32,10 +32,12 @@
     
     #player-field {
       width: 50%;
+      float: left;
     }
     
     #enemy-field {
       width: 50%;
+      float: right;
     }
     
     .field {      
@@ -123,7 +125,11 @@ card {
     margin-right: 10px;
     
     .name {
-      display: none;
+      //display: none;
     }
+  }
+  
+  &:hover {
+    border-color: red;
   }
 }

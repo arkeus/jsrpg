@@ -36,7 +36,18 @@
                 </div>
             </div>
             <div class="field" id="enemy-field" ng-controller="EnemyFieldController">
+                <div class="monster-column column">
+                    <card source="field.monsters[0]" data-index="0" class="row-top card-field"></card>
+                    <card source="field.monsters[1]" data-index="1" class="row-middle card-field"></card>
+                    <card source="field.monsters[2]" data-index="2" class="row-bottom card-field"></card>
+                    <div class="clear"></div>
+                </div>
+                <div class="hero-column column">
+                    <card source="field.hero" class="row-middle card-field"></card>
+                    <div class="clear"></div>
+                </div>
             </div>
+            <div class="clear"></div>
         </div>
         <div id="status">
             status bars here
