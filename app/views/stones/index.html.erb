@@ -11,31 +11,27 @@
         <%= javascript_include_tag "stones/manifest" %>
         <!--[if lte IE 8]>
         <script>
-            document.createElement('div');
+            document.createElement('card');
         </script>
         <![endif]-->
     </head>
     <body>
     <div id="game"><div>
         <div id="header">
-            header
+            <div class="column center">Player</div>
+            <div class="column center">Enemy</div>
+            <div class="clear"></div>
         </div>
         <div id="fields">
             <div class="field" id="player-field" ng-controller="PlayerFieldController">
                 <div class="hero-column">
                     hero card
                 </div>
-                <div class="monster-column">
-                    <div ng-repeat="monster in field.monsters">monster</div>
-                </div>
+                <card data-source="field.monsters[0]" data-index="0"></card>
+                <card data-source="field.monsters[1]" data-index="1"></card>
+                <card data-source="field.monsters[2]" data-index="2"></card>
             </div>
             <div class="field" id="enemy-field" ng-controller="EnemyFieldController">
-                <div class="hero-column">
-                    hero card
-                </div>
-                <div class="monster-column">
-                    <div ng-repeat="monster in field.monsters">monster</div>
-                </div>
             </div>
         </div>
         <div id="status">

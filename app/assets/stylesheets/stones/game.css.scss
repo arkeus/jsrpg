@@ -1,3 +1,5 @@
+@import "utility";
+
 #game {
   border-radius: 5px;
   padding: 5px;
@@ -8,7 +10,6 @@
   > div {
     border: 1px solid #d5d5d5;
     border-radius: 3px;
-    height: 500px;
     background: #fcfcfc;
   }
   
@@ -31,9 +32,8 @@
   }
   
   #status {
-    background: #c9c9c9;
+    background: #aaa;
     border: {
-      bottom: 1px solid #c0c0c0;
       left: 1px solid #fff;
       right: 1px solid #fff;
     }
@@ -44,11 +44,20 @@
   #hand {
     background: #e6e6e6;
     border: {
-      top: 1px solid #efefef;
+      top: 1px solid #fff;
       left: 1px solid #fff;
       right: 1px solid #fff;
+      bottom: 1px solid #fff;
+      bottom-left-radius: 3px;
+      bottom-right-radius: 3px;
     }
     padding: 3px;
     height: 80px;
+  }
+  
+  .column {
+    @include box-size;
+    float: left;
+    width: 50%;
   }
 }

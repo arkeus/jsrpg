@@ -1,8 +1,8 @@
 var Card = function(data) {
     data = data || {};
     
-    var effects = data['effects'];
-    var name = data['name'];
-    var description = data['description'];
-    var cost = data['cost'] || 0;
+    this.effects = data['effects'];
+    this.name = data['name'];
+    this.description = data['description'];
+    this.cost = data['cost'] || 0;
 };
