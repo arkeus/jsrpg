@@ -51,11 +51,11 @@
         </div>
         <div id="status">
             <div class="player-status" ng-controller="PlayerFieldController">
-                H {{field.hero.hp}} D {{field.deck.length}} G {{field.graveyard.length}}
+                H {{field.hero.hp}} D {{field.deck.length}} G {{field.graveyard.length}} -- [F {{field.stones.fire}} | W {{field.stones.water}} | E {{field.stones.earth}} | A {{field.stones.air}}]
             </div>
             <div class="play-button">PLAY</div>
             <div class="enemy-status" ng-controller="EnemyFieldController">
-                H {{field.hero.hp}} D {{field.deck.length}} G {{field.graveyard.length}}
+                [F {{field.stones.fire}} | W {{field.stones.water}} | E {{field.stones.earth}} | A {{field.stones.air}}] -- H {{field.hero.hp}} D {{field.deck.length}} G {{field.graveyard.length}}
             </div>
         </div>
         <div id="hand" ng-controller="PlayerFieldController">

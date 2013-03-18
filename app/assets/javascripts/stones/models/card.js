@@ -3,7 +3,7 @@ var Card = function(data) {
     
     this.type = data['type'];
     this.name = data['name'];
-    this.cost = data['cost'] || 0;
+    this.cost = data['cost'] || null;
     this.hp = 20;
     this.power = 5;
     this.armor = 1;

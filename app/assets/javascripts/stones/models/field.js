@@ -1,4 +1,5 @@
 var Field = function() {
+    this.stones = new Stones();
     this.hero = WIZARD;
     this.monsters = [null, null, null];
     this.hand = [SWORD, SWORD, FIREBALL, FIREBALL, FIREBALL, SLIME, SLIME];
