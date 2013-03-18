@@ -50,7 +50,13 @@
             <div class="clear"></div>
         </div>
         <div id="status">
-            status bars here
+            <div class="player-status" ng-controller="PlayerFieldController">
+                H {{field.hero.hp}} D {{field.deck.length}} G {{field.graveyard.length}}
+            </div>
+            <div class="play-button">PLAY</div>
+            <div class="enemy-status" ng-controller="EnemyFieldController">
+                H {{field.hero.hp}} D {{field.deck.length}} G {{field.graveyard.length}}
+            </div>
         </div>
         <div id="hand" ng-controller="PlayerFieldController">
             <card ng-repeat="card in field.hand" source="card" class="card-hand"></card>

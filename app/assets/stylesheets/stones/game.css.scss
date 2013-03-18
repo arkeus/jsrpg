@@ -75,6 +75,27 @@
     }
     padding: 3px;
     height: 40px;
+    
+    .player-status {
+      @include box-size;
+      width: 40%;
+      text-align: left;
+      float: left;
+    }
+    
+    .play-button {
+      @include box-size;
+      width: 20%;
+      text-align: center;
+      float: left;
+    }
+    
+    .enemy-status {
+      @include box-size;
+      width: 40%;
+      text-align: right;
+      float: left;
+    }
   }
   
   #hand {
