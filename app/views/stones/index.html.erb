@@ -24,12 +24,16 @@
         </div>
         <div id="fields">
             <div class="field" id="player-field" ng-controller="PlayerFieldController">
-                <div class="hero-column">
-                    hero card
+                <div class="hero-column column">
+                    <card source="field.hero" class="row-middle card-field"></card>
+                    <div class="clear"></div>
                 </div>
-                <card data-source="field.monsters[0]" data-index="0"></card>
-                <card data-source="field.monsters[1]" data-index="1"></card>
-                <card data-source="field.monsters[2]" data-index="2"></card>
+                <div class="monster-column column">
+                    <card source="field.monsters[0]" data-index="0" class="row-top card-field"></card>
+                    <card source="field.monsters[1]" data-index="1" class="row-middle card-field"></card>
+                    <card source="field.monsters[2]" data-index="2" class="row-bottom card-field"></card>
+                    <div class="clear"></div>
+                </div>
             </div>
             <div class="field" id="enemy-field" ng-controller="EnemyFieldController">
             </div>
@@ -37,8 +41,8 @@
         <div id="status">
             status bars here
         </div>
-        <div id="hand">
-            player hand here
+        <div id="hand" ng-controller="PlayerFieldController">
+            <card ng-repeat="card in field.hand" source="card" class="card-hand"></card>
         </div>
     </div></div>
     </body>

@@ -28,7 +28,41 @@
   
   #fields {
     padding: 3px;
-    height: 250px;
+    height: 300px;
+    
+    #player-field {
+      width: 50%;
+    }
+    
+    #enemy-field {
+      width: 50%;
+    }
+    
+    .field {      
+      .hero-column, .monster-column {
+        height: 300px;
+        position: relative;
+        
+        card {
+          left: 25px;
+        }
+      }
+      
+      .row-top {
+        position: absolute;
+        top: 20px;
+      }
+      
+      .row-middle {
+        position: absolute;
+        top: 110px;
+      }
+      
+      .row-bottom {
+        position: absolute;
+        top: 200px;
+      }
+    }
   }
   
   #status {
@@ -59,5 +93,37 @@
     @include box-size;
     float: left;
     width: 50%;
+    border: 1px solid #aaa;
+  }
+}
+
+card {
+  display: inline-block;
+  
+  .exist {
+    display: none;
+  }
+  
+  &.card-full {
+    
+  }
+  
+  &.card-field {
+    width: 160px;
+    height: 80px;
+    border: 1px solid #000;
+    border-radius: 3px;
+  }
+  
+  &.card-hand {
+    width: 100px;
+    height: 80px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    margin-right: 10px;
+    
+    .name {
+      display: none;
+    }
   }
 }
