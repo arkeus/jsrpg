@@ -16,6 +16,34 @@
         <![endif]-->
     </head>
     <body>
-        
+    <div id="game"><div>
+        <div id="header">
+            header
+        </div>
+        <div id="fields">
+            <div class="field" id="player-field" ng-controller="PlayerFieldController">
+                <div class="hero-column">
+                    hero card
+                </div>
+                <div class="monster-column">
+                    <div ng-repeat="monster in field.monsters">monster</div>
+                </div>
+            </div>
+            <div class="field" id="enemy-field" ng-controller="EnemyFieldController">
+                <div class="hero-column">
+                    hero card
+                </div>
+                <div class="monster-column">
+                    <div ng-repeat="monster in field.monsters">monster</div>
+                </div>
+            </div>
+        </div>
+        <div id="status">
+            status bars here
+        </div>
+        <div id="hand">
+            player hand here
+        </div>
+    </div></div>
     </body>
 </html>
