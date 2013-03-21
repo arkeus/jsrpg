@@ -1,9 +1,13 @@
-app.directive("card", ["$timeout", "Registry", function($timeout, Registry) {
+app.directive("card", ["$timeout", "Game", function($timeout, Game) {
     return {
         restrict: "E",
         scope: { card: '=source' },
         link: function(scope, element, attrs) {
             var card = scope.card;
+            
+            $(element).click(function() {
+                Game.play(card);
+            });
         },
         template: "<div class='exist{{card.cost}}'>" +
             "<div class='name'>{{card.name}}</div>" +
