@@ -1,4 +1,4 @@
-var EnemyFieldController = function($scope, Registry) {
-    $scope.field = new Field;
+var EnemyFieldController = function($scope, Game) {
+    $scope.field = Game.enemy = new Field;
 };
-EnemyFieldController.$inject = ["$scope", "Registry"];
+EnemyFieldController.$inject = ["$scope", "Game"];

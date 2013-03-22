@@ -1,7 +1,20 @@
 app.factory("Game", ["$rootScope", "$timeout", function($rootScope, $timeout) {
     $rootScope.Game = new function() {
-        this.play = function(card) {
-            console.log("Playing", card);
+        this.player = null;
+        this.enemy = null;
+        
+        this.side = PLAYER;
+        this.phase = DRAW;
+        
+        this.preplay = function(card) {
+            var target = this.player.targeter.target(card);
+            if (target != null) {
+                this.play(card, target);
+            }
+        };
+        
+        this.play = function(card, target) {
+            
         };
     };
         

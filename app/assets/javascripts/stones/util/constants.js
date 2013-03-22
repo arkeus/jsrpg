@@ -11,3 +11,12 @@ var CLEANUP = 3;
 // phases
 var IDLE = 0;
 var PLAYING = 1;
+
+// card types
+var Type = {
+    HERO: "Hero",
+    ITEM: "Item",
+    SPELL: "Spell",
+    MONSTER: "Monster",
+    STONE: "Stone"
+};

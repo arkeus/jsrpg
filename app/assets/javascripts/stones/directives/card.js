@@ -6,7 +6,7 @@ app.directive("card", ["$timeout", "Game", function($timeout, Game) {
             var card = scope.card;
             
             $(element).click(function() {
-                Game.play(card);
+                Game.preplay(card);
             });
         },
         template: "<div class='exist{{card.cost}}'>" +
