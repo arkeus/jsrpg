@@ -36,7 +36,7 @@ var Item = function(baseItem) {
     };
     
     this.calculatePower = function(level, upgradeLevel) {
-        var effect = 5 + level * 2.1;
+        var effect = 5 + level * 1.8;
         var upgrade = upgradeLevel || 0;
         return Math.ceil(effect * (1 + upgrade / 30) + upgrade * 2);
     };
