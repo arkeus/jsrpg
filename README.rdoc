@@ -10,7 +10,6 @@ http://jsrpg.io/ashen
 === Stones
 
 Prototype for card game in future project.
-http://jsrpg.io/stones
 
 == FAQ
 
