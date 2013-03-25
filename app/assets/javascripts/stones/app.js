@@ -6,5 +6,5 @@ app.run(["$rootScope", function($rootScope) {
     SWORD = new Card({ name: "Sword", type: Type.ITEM, cost: new Cost({ physical: 1 }), effects: [] });
     FIREBALL = new Card({ name: "Fireball", type: Type.SPELL, cost: new Cost({ fire: 2 }), effects: [] });
     SLIME = new Card({ name: "Slime", type: Type.MONSTER, cost: new Cost({ water: 1, air: 1 }), effects: [] });
-    STONE = new Card({ name: "Flame Stone", type: Type.STONE, effect: [new StoneGainEffect({ fire: 3 })] });
+    STONE = new Card({ name: "Flame Stone", type: Type.STONE, effects: [new StoneGainEffect({ fire: 3 })] });
 }]);
