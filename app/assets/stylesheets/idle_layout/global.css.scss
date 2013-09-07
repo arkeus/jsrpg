@@ -1,0 +1,63 @@
+body, html {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+body {
+  background: image-url("idle_layout/grass.png");
+}
+
+$gold: #9d8d4e;
+$gold-light: #efde9c;
+$gold-dark: #74652b;
+$gray: #333333;
+$gray-dark: #222222;
+$gray-light: #555555;
+
+
+.window {
+  box-shadow: 0 0 5px #000;
+  border-radius: 5px;
+  background: #9d8d4e;
+  position: absolute;
+  box-sizing: border-box;
+  padding: 2px;
+  box-shadow: inset 1px 1px 0 $gold-light, inset -1px -1px 1px $gold-dark, 0 0 5px #000;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  
+  > div {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    border: {
+      top: 1px solid $gold-dark;
+      left: 1px solid $gold-dark;
+      right: 1px solid $gold-light;
+      bottom: 1px solid $gold-light;
+    }
+    
+    > div {
+      box-sizing: border-box;
+      width: 100%;
+      height: 100%;
+      border-radius: 3px;
+      box-shadow: inset 1px 1px 1px $gray-light, inset -1px -1px 1px $gray-dark;
+      border: 1px solid #000;
+      background: -webkit-linear-gradient(top, #333 80%, #2f2f2f 100%);
+      padding: 4px;
+      font-family: helvetica, arial, sans-serif;
+      font-size: 11px;
+      color: #ccc;
+      text-shadow: 0 0 2px #000;
+    }
+  }
+}
+
+#message {
+  left: 100px;
+  top: 100px;
+  width: 300px;
+  height: 150px;
+}
