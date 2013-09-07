@@ -22,7 +22,7 @@ $gray-light: #555555;
   background: #9d8d4e;
   position: absolute;
   box-sizing: border-box;
-  padding: 2px;
+  padding: 3px;
   box-shadow: inset 1px 1px 0 $gold-light, inset -1px -1px 1px $gold-dark, 0 0 5px #000;
   border: 1px solid rgba(0, 0, 0, 0.5);
   
@@ -48,7 +48,7 @@ $gray-light: #555555;
       background: -webkit-linear-gradient(top, #333 80%, #2f2f2f 100%);
       padding: 4px;
       font-family: helvetica, arial, sans-serif;
-      font-size: 11px;
+      font-size: 14px;
       color: #ccc;
       text-shadow: 0 0 2px #000;
     }
