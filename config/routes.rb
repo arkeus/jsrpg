@@ -1,6 +1,7 @@
 JSRPG::Application.routes.draw do
   match "ashen" => "ashen#index", :as => "ashen"
   match "stones" => "stones#index", :as => "stones"
+  match "idle/design" => "idle_layout#index", :as => "idle_layout"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
