@@ -23,7 +23,8 @@ set :use_sudo, false
 
 set :scm, :git
 #set :repository,  "C:/Dev/Workspace/Rails/Vigil/.git"
-set :repository,  "~/Documents/Workspace/JSRPG/.git"
+#set :repository,  "~/Documents/Workspace/JSRPG/.git"
+set :repository, "~/workspace/rails/jsrpg/.git"
 set :branch, "master"
 
 # VPS
