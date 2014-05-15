@@ -10,5 +10,5 @@ var PlayerFieldController = function($scope, Game) {
         $scope.$digest();
         console.log("DIGEST");
     });
-};
+};
 PlayerFieldController.$inject = ["$scope", "Game"];
