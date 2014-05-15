@@ -15,5 +15,5 @@ var Experience = function(experienceFactor) {
             gainedLevel = true;
         }
         return gainedLevel;
-    }
-}
+    };
+};

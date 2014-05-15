@@ -20,4 +20,4 @@ var Log = function($rootScope, $timeout) {
     this.tick = function() {
         this.messages.push("-");
     };
-}
+};

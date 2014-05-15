@@ -15,7 +15,7 @@ var Tooltip = function() {
     };
     
     this.showString = function(element, value) {
-        this.show(element, value, { maxWidth: "200px", textAlign: "center", offsetX: -5 })
+        this.show(element, value, { maxWidth: "200px", textAlign: "center", offsetX: -5 });
     };
     
     this.showItem = function(element, item) {

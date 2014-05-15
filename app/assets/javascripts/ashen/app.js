@@ -43,7 +43,7 @@ app.directive("log", ["$timeout", function($timeout) {
                 $(element).stop(true, false).scrollTop($(element)[0].scrollHeight - $(element).outerHeight());
             });
         }
-    }
+    };
 }]);
 
 app.directive("bar", function() {
@@ -65,7 +65,7 @@ app.directive("bar", function() {
                 $(element).find(".fill").stop(true, false).animate({ "width": (current / max * 100) + "%" }, GAME_TICK * 0.75);
             });
         }
-    }
+    };
 });
 
 app.directive("item", ["$timeout", "Registry", function($timeout, Registry) {
@@ -110,7 +110,7 @@ app.directive("item", ["$timeout", "Registry", function($timeout, Registry) {
                 });
             }
         }
-    }
+    };
 }]);
 
 app.directive("tooltip", ["Registry", function(Registry) {
@@ -122,10 +122,10 @@ app.directive("tooltip", ["Registry", function(Registry) {
                 switch (type) {
                     case "item":
                         var content = scope.$eval(attrs.tooltipContent);
-                        Registry.tooltip.showItem(element, content)
+                        Registry.tooltip.showItem(element, content);
                     break;
                     case "string":
-                        Registry.tooltip.showString(element, attrs.tooltipContent)
+                        Registry.tooltip.showString(element, attrs.tooltipContent);
                     break;
                 }
                 $(this).addClass("tooltip-focus");
@@ -136,5 +136,5 @@ app.directive("tooltip", ["Registry", function(Registry) {
                 $(this).removeClass("tooltip-focus");
             });
         }
-    }
+    };
 }]);

@@ -7,5 +7,5 @@ var Affix = function(name, type, rarity, attributes, base) {
     
     this.stat = function(type, level) {
         return (this.attributes[type] || 0) * level;
-    }
+    };
 };

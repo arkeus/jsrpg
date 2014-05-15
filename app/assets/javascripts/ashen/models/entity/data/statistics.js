@@ -25,7 +25,7 @@ var Statistics = function() {
         this.wisdom = 10 + level;
         this.spirit = 10 + level;
     };
-}
+};
 
 var ALL_STATISTICS = {
     "strength": "Strength",

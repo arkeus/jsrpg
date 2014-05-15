@@ -48,4 +48,4 @@ var Player = function($rootScope) {
         this.inventory.add(item);
         this.equipped[item.base.type] = null;
     };
-}
+};
